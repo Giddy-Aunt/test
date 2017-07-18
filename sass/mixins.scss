@@ -1,0 +1,26 @@
+@mixin placeholder($color: grey) {
+    &::placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &:-ms-input-placeholder  {
+    color: $color;
+    text-overflow: ellipsis;
+  }
+}
