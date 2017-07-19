@@ -61,6 +61,7 @@
 .text-field {
     position: relative;
     margin: 36px 0;
+    z-index: 10;
 
     .btn--clear {
         position: absolute;
@@ -88,6 +89,7 @@
     line-height: 22px;
     border: none;
     border-bottom: 1px solid $text-color-main;
+    background: transparent;
     outline: none;
 
     @include placeholder(transparent);
@@ -97,17 +99,15 @@
     position: absolute;
     left: 0;
     top: 8px;
+    z-index: -10;
 
     color: $text-color-secondary;
 
     transform: top font-size 0.8s;
 
-    .text-field__input:focus + & {
+    .text-field__input:focus + &,
+    .text-field__input--not-empty + & {
         top: -16px;
         font-size: 12px;
-    }
-
-    .text-field__input:valid + & {
-        display: none;
     }
 }
