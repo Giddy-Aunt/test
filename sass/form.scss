@@ -93,6 +93,13 @@
     outline: none;
 
     @include placeholder(transparent);
+
+    &:invalid,
+    &:not(:placeholder-shown) {
+        outline: none;
+        box-shadow: none;
+        box-shadow-color: transparent;
+    }
 }
 
 .text-field__label {
@@ -106,7 +113,7 @@
     transform: top font-size 0.8s;
 
     .text-field__input:focus + &,
-    .text-field__input--not-empty + & {
+    .text-field__input:not(:placeholder-shown) + & {
         top: -16px;
         font-size: 12px;
     }
