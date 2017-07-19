@@ -509,6 +509,10 @@ body {
   .text-field__input:-ms-input-placeholder {
     color: transparent;
     text-overflow: ellipsis; }
+  .text-field__input:invalid, .text-field__input:not(:placeholder-shown) {
+    outline: none;
+    box-shadow: none;
+    box-shadow-color: transparent; }
 
 .text-field__label {
   position: absolute;
@@ -518,6 +522,6 @@ body {
   color: #88a6b0;
   transform: top font-size 0.8s; }
   .text-field__input:focus + .text-field__label,
-  .text-field__input--not-empty + .text-field__label {
+  .text-field__input:not(:placeholder-shown) + .text-field__label {
     top: -16px;
     font-size: 12px; }
